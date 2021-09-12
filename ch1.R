@@ -52,10 +52,12 @@ are_equal <- function(x, y) {
         length_test  <- dim(x) == dim (y)
 
     }
+        comparison <- all(mapply(compare, x, y))
 
-    length_test && compare(x,y)
+    length_test && comparison
 
 }
+
 
 # notation:
 # a_i* notates is the column vector corresponding to the ith row
