@@ -37,25 +37,21 @@ eucledian <- sqrt(sum(unlist(lapply(v, sq))))
 # notation: A = [a_11 .. a_nm] or A = (a_ij) where i = {1 .. n} and j = {1 .. m}
 # also for element notation: a_ij = (A)_ij
 
-#similariy:
+# similariy:
 
-compare <- function(x,y) {
+compare <- function(x, y) {
     x == y
 }
 
 are_equal <- function(x, y) {
     if (any(is.vector(x), is.vector(y))) {
-
-        length_test  <- length(x) == length(y)
-
-    } else if(any(is.matrix(x), is.matrix(y))) {
-        length_test  <- dim(x) == dim (y)
-
+        length_test <- length(x) == length(y)
+    } else if (any(is.matrix(x), is.matrix(y))) {
+        length_test <- dim(x) == dim(y)
     }
-        comparison <- all(mapply(compare, x, y))
+    comparison <- all(mapply(compare, x, y))
 
     length_test && comparison
-
 }
 
 
@@ -64,3 +60,4 @@ are_equal <- function(x, y) {
 # a_*j is the jth column of the matrix
 # so a matrix can also be notated as :
 # A = [a_1*^T ... a_n*^T] or A = [a_*1 ... a _*m]
+
